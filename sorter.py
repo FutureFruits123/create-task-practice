@@ -3,8 +3,19 @@ restaurants = ["In-N-Out", "Five Guys", "Cheesecake Factory", "Jack in the Box"]
 new_restaurant = input("What restaurant would you like to add to the list?")
 
 def restaurant_sorter(new_restaurant):
-    print("Your updated restaurants ranking is: " + str(restaurants))
+  x = 0
+  
+  for i in restaurants:
+    choice = input("Do you prefer " + restaurants[x] + " or " + new_restaurant).lower()
+    if choice == new_restaurant.lower():
+     restaurants.insert(x, new_restaurant)
+     break
+    elif choice == restaurants[x].lower():
+      x = x + 1
+  print("Your updated restaurants ranking is: " + str(restaurants))
 
+
+restaurant_sorter(new_restaurant)
 """
 choice1 = input("Do you prefer " + restaurants[0] + " or " + new_restaurant).lower()
 
